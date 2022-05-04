@@ -47,7 +47,9 @@
    "cell_type": "code",
    "execution_count": 2,
    "id": "d1cad336",
-   "metadata": {},
+   "metadata": {
+    "scrolled": true
+   },
    "outputs": [
     {
      "name": "stdout",
@@ -102,13 +104,21 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "48260273",
+   "metadata": {},
+   "source": [
+    "### Set Refinitiv app key"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 4,
    "id": "09aa437c",
    "metadata": {},
    "outputs": [],
    "source": [
-    "ek.set_app_key('7ea8d7f398a04253b4e1966c9c7ab5d6ef7593dc')"
+    "ek.set_app_key('SET_APP_KEY')"
    ]
   },
   {
@@ -139,7 +149,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 766,
    "id": "4c09c87a",
    "metadata": {},
    "outputs": [
@@ -234,7 +244,7 @@
        "2021-08-31  1.3071       1.912   -0.380   0.165  0.024"
       ]
      },
-     "execution_count": 6,
+     "execution_count": 766,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -2044,6 +2054,27 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 767,
+   "id": "00d58003",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "-0.00018939393939398919"
+      ]
+     },
+     "execution_count": 767,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "dfall10y.Japan.mean() - df10yExcel.Japan.mean()"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": 38,
    "id": "322a2613",
    "metadata": {},
@@ -2235,7 +2266,9 @@
    "cell_type": "code",
    "execution_count": 43,
    "id": "666dd9fb",
-   "metadata": {},
+   "metadata": {
+    "scrolled": true
+   },
    "outputs": [
     {
      "data": {
@@ -2384,6 +2417,121 @@
     "\n",
     "dfUSA = pd.concat(data, axis=1, keys=headers)\n",
     "dfUSA"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 768,
+   "id": "64a10344",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Benchmark 2y</th>\n",
+       "      <th>Benchmark 10y</th>\n",
+       "      <th>UNR</th>\n",
+       "      <th>CPI</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>count</th>\n",
+       "      <td>132.000000</td>\n",
+       "      <td>132.000000</td>\n",
+       "      <td>132.000000</td>\n",
+       "      <td>132.000000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>mean</th>\n",
+       "      <td>0.859259</td>\n",
+       "      <td>2.073188</td>\n",
+       "      <td>6.004545</td>\n",
+       "      <td>2.006818</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>std</th>\n",
+       "      <td>0.765335</td>\n",
+       "      <td>0.647038</td>\n",
+       "      <td>2.074338</td>\n",
+       "      <td>1.319449</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>min</th>\n",
+       "      <td>0.109300</td>\n",
+       "      <td>0.533100</td>\n",
+       "      <td>3.500000</td>\n",
+       "      <td>-0.200000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>25%</th>\n",
+       "      <td>0.264725</td>\n",
+       "      <td>1.637625</td>\n",
+       "      <td>4.300000</td>\n",
+       "      <td>1.375000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>50%</th>\n",
+       "      <td>0.572300</td>\n",
+       "      <td>2.121850</td>\n",
+       "      <td>5.450000</td>\n",
+       "      <td>1.800000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>75%</th>\n",
+       "      <td>1.273875</td>\n",
+       "      <td>2.510750</td>\n",
+       "      <td>7.525000</td>\n",
+       "      <td>2.400000</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>max</th>\n",
+       "      <td>2.870900</td>\n",
+       "      <td>3.470300</td>\n",
+       "      <td>14.700000</td>\n",
+       "      <td>7.000000</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       Benchmark 2y  Benchmark 10y         UNR         CPI\n",
+       "count    132.000000     132.000000  132.000000  132.000000\n",
+       "mean       0.859259       2.073188    6.004545    2.006818\n",
+       "std        0.765335       0.647038    2.074338    1.319449\n",
+       "min        0.109300       0.533100    3.500000   -0.200000\n",
+       "25%        0.264725       1.637625    4.300000    1.375000\n",
+       "50%        0.572300       2.121850    5.450000    1.800000\n",
+       "75%        1.273875       2.510750    7.525000    2.400000\n",
+       "max        2.870900       3.470300   14.700000    7.000000"
+      ]
+     },
+     "execution_count": 768,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "dfUSA.describe()"
    ]
   },
   {
@@ -2887,7 +3035,9 @@
    "cell_type": "code",
    "execution_count": 47,
    "id": "e0aabd65",
-   "metadata": {},
+   "metadata": {
+    "scrolled": true
+   },
    "outputs": [
     {
      "data": {
@@ -3036,6 +3186,613 @@
     "\n",
     "dfJapan = pd.concat(data5, axis=1, keys=headers)\n",
     "dfJapan"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "87957a7d",
+   "metadata": {},
+   "source": [
+    "## Export to SQL Database"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 769,
+   "id": "327ac7c3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "dfJapan.to_csv('Japan.csv')\n",
+    "dfGermany.to_csv('Germany.csv')\n",
+    "dfUSA.to_csv('USA.csv')\n",
+    "dfSouthKorea.to_csv('SouthKorea.csv')\n",
+    "dfSweden.to_csv('Sweden.csv')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "49f12160",
+   "metadata": {},
+   "source": [
+    "### Establish SQL connection"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 785,
+   "id": "157d98f1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2.6.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "import sqlite3\n",
+    "from sqlite3 import Error\n",
+    " \n",
+    "\n",
+    "\"\"\" create a database connection tool to a SQLite database \"\"\"\n",
+    "\n",
+    "def create_connection(db_file):\n",
+    "    conn = None\n",
+    "    try:\n",
+    "        conn = sqlite3.connect(db_file)\n",
+    "        print(sqlite3.version)\n",
+    "    except Error as e:\n",
+    "        print(e)\n",
+    "    finally:\n",
+    "        if conn:\n",
+    "            conn.close()\n",
+    " \n",
+    " \n",
+    "if __name__ == '__main__':\n",
+    "    create_connection(\"/Users/philipplochbuhler/OneDrive - ZHAW/ZHAW/Master/Semester 2/AQM/02.05.22/AQM_GroupR_Database.db\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 786,
+   "id": "a8e98020",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Opened database successfully\n"
+     ]
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect(\"/Users/philipplochbuhler/OneDrive - ZHAW/ZHAW/Master/Semester 2/AQM/02.05.22/AQM_GroupR_Database.db\")\n",
+    "\n",
+    "print(\"Opened database successfully\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "74c85b74",
+   "metadata": {},
+   "source": [
+    "### import data tables from SQL"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 795,
+   "id": "69365028",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>Benchmark 2y</th>\n",
+       "      <th>Benchmark 10y</th>\n",
+       "      <th>UNR</th>\n",
+       "      <th>CPI</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2011-01-31</td>\n",
+       "      <td>0.200</td>\n",
+       "      <td>1.215</td>\n",
+       "      <td>4.8</td>\n",
+       "      <td>-0.6</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2011-02-28</td>\n",
+       "      <td>0.245</td>\n",
+       "      <td>1.259</td>\n",
+       "      <td>4.7</td>\n",
+       "      <td>-0.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2011-03-31</td>\n",
+       "      <td>0.215</td>\n",
+       "      <td>1.255</td>\n",
+       "      <td>4.7</td>\n",
+       "      <td>-0.5</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2011-04-30</td>\n",
+       "      <td>0.200</td>\n",
+       "      <td>1.206</td>\n",
+       "      <td>4.7</td>\n",
+       "      <td>-0.4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2011-05-31</td>\n",
+       "      <td>0.180</td>\n",
+       "      <td>1.155</td>\n",
+       "      <td>4.6</td>\n",
+       "      <td>-0.4</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date  Benchmark 2y  Benchmark 10y  UNR  CPI\n",
+       "0  2011-01-31         0.200          1.215  4.8 -0.6\n",
+       "1  2011-02-28         0.245          1.259  4.7 -0.5\n",
+       "2  2011-03-31         0.215          1.255  4.7 -0.5\n",
+       "3  2011-04-30         0.200          1.206  4.7 -0.4\n",
+       "4  2011-05-31         0.180          1.155  4.6 -0.4"
+      ]
+     },
+     "execution_count": 795,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect('AQM_GroupR_Database.db')\n",
+    "c = conn.cursor()\n",
+    "c.execute('SELECT * FROM Japan')\n",
+    "dfJapanSQL=c.fetchall()\n",
+    "dfJapanSQL = pd.DataFrame (dfJapanSQL, columns = ['Date', 'Benchmark 2y', 'Benchmark 10y', 'UNR', 'CPI'])\n",
+    "dfJapanSQL.head(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 793,
+   "id": "08ed85e8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>Benchmark 2y</th>\n",
+       "      <th>Benchmark 10y</th>\n",
+       "      <th>UNR</th>\n",
+       "      <th>CPI</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2011-01-31</td>\n",
+       "      <td>1.370</td>\n",
+       "      <td>3.163</td>\n",
+       "      <td>7.4</td>\n",
+       "      <td>1.7</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2011-02-28</td>\n",
+       "      <td>1.525</td>\n",
+       "      <td>3.171</td>\n",
+       "      <td>7.3</td>\n",
+       "      <td>1.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2011-03-31</td>\n",
+       "      <td>1.795</td>\n",
+       "      <td>3.358</td>\n",
+       "      <td>7.2</td>\n",
+       "      <td>2.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2011-04-30</td>\n",
+       "      <td>1.774</td>\n",
+       "      <td>3.236</td>\n",
+       "      <td>7.1</td>\n",
+       "      <td>1.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2011-05-31</td>\n",
+       "      <td>1.609</td>\n",
+       "      <td>3.021</td>\n",
+       "      <td>7.1</td>\n",
+       "      <td>2.0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date  Benchmark 2y  Benchmark 10y  UNR  CPI\n",
+       "0  2011-01-31         1.370          3.163  7.4  1.7\n",
+       "1  2011-02-28         1.525          3.171  7.3  1.9\n",
+       "2  2011-03-31         1.795          3.358  7.2  2.0\n",
+       "3  2011-04-30         1.774          3.236  7.1  1.9\n",
+       "4  2011-05-31         1.609          3.021  7.1  2.0"
+      ]
+     },
+     "execution_count": 793,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect('AQM_GroupR_Database.db')\n",
+    "c = conn.cursor()\n",
+    "c.execute('SELECT * FROM Germany')\n",
+    "dfGermanySQL=c.fetchall()\n",
+    "dfGermanySQL = pd.DataFrame (dfGermanySQL, columns = ['Date', 'Benchmark 2y', 'Benchmark 10y', 'UNR', 'CPI'])\n",
+    "dfGermanySQL.head(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 798,
+   "id": "37560c87",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>Benchmark 2y</th>\n",
+       "      <th>Benchmark 10y</th>\n",
+       "      <th>UNR</th>\n",
+       "      <th>CPI</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2011-01-31</td>\n",
+       "      <td>3.87</td>\n",
+       "      <td>4.71</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>3.4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2011-02-28</td>\n",
+       "      <td>3.64</td>\n",
+       "      <td>4.67</td>\n",
+       "      <td>3.7</td>\n",
+       "      <td>3.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2011-03-31</td>\n",
+       "      <td>3.57</td>\n",
+       "      <td>4.48</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>4.1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2011-04-30</td>\n",
+       "      <td>3.70</td>\n",
+       "      <td>4.48</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>3.8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2011-05-31</td>\n",
+       "      <td>3.52</td>\n",
+       "      <td>4.23</td>\n",
+       "      <td>3.3</td>\n",
+       "      <td>3.9</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date  Benchmark 2y  Benchmark 10y  UNR  CPI\n",
+       "0  2011-01-31          3.87           4.71  3.5  3.4\n",
+       "1  2011-02-28          3.64           4.67  3.7  3.9\n",
+       "2  2011-03-31          3.57           4.48  3.8  4.1\n",
+       "3  2011-04-30          3.70           4.48  3.5  3.8\n",
+       "4  2011-05-31          3.52           4.23  3.3  3.9"
+      ]
+     },
+     "execution_count": 798,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect('AQM_GroupR_Database.db')\n",
+    "c = conn.cursor()\n",
+    "c.execute('SELECT * FROM SouthKorea')\n",
+    "dfSouthKoreaSQL=c.fetchall()\n",
+    "dfSouthKoreaSQL = pd.DataFrame (dfSouthKoreaSQL, columns = ['Date', 'Benchmark 2y', 'Benchmark 10y', 'UNR', 'CPI'])\n",
+    "dfSouthKoreaSQL.head(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 799,
+   "id": "19c1b582",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>Benchmark 2y</th>\n",
+       "      <th>Benchmark 10y</th>\n",
+       "      <th>UNR</th>\n",
+       "      <th>CPI</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2011-01-31</td>\n",
+       "      <td>3.87</td>\n",
+       "      <td>4.71</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>3.4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2011-02-28</td>\n",
+       "      <td>3.64</td>\n",
+       "      <td>4.67</td>\n",
+       "      <td>3.7</td>\n",
+       "      <td>3.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2011-03-31</td>\n",
+       "      <td>3.57</td>\n",
+       "      <td>4.48</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>4.1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2011-04-30</td>\n",
+       "      <td>3.70</td>\n",
+       "      <td>4.48</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>3.8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2011-05-31</td>\n",
+       "      <td>3.52</td>\n",
+       "      <td>4.23</td>\n",
+       "      <td>3.3</td>\n",
+       "      <td>3.9</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date  Benchmark 2y  Benchmark 10y  UNR  CPI\n",
+       "0  2011-01-31          3.87           4.71  3.5  3.4\n",
+       "1  2011-02-28          3.64           4.67  3.7  3.9\n",
+       "2  2011-03-31          3.57           4.48  3.8  4.1\n",
+       "3  2011-04-30          3.70           4.48  3.5  3.8\n",
+       "4  2011-05-31          3.52           4.23  3.3  3.9"
+      ]
+     },
+     "execution_count": 799,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect('AQM_GroupR_Database.db')\n",
+    "c = conn.cursor()\n",
+    "c.execute('SELECT * FROM SouthKorea')\n",
+    "dfSwedenSQL=c.fetchall()\n",
+    "dfSwedenSQL = pd.DataFrame (dfSwedenSQL, columns = ['Date', 'Benchmark 2y', 'Benchmark 10y', 'UNR', 'CPI'])\n",
+    "dfSwedenSQL.head(5)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 800,
+   "id": "ea4db905",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Date</th>\n",
+       "      <th>Benchmark 2y</th>\n",
+       "      <th>Benchmark 10y</th>\n",
+       "      <th>UNR</th>\n",
+       "      <th>CPI</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>2011-01-31</td>\n",
+       "      <td>3.87</td>\n",
+       "      <td>4.71</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>3.4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>2011-02-28</td>\n",
+       "      <td>3.64</td>\n",
+       "      <td>4.67</td>\n",
+       "      <td>3.7</td>\n",
+       "      <td>3.9</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>2011-03-31</td>\n",
+       "      <td>3.57</td>\n",
+       "      <td>4.48</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>4.1</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>2011-04-30</td>\n",
+       "      <td>3.70</td>\n",
+       "      <td>4.48</td>\n",
+       "      <td>3.5</td>\n",
+       "      <td>3.8</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>2011-05-31</td>\n",
+       "      <td>3.52</td>\n",
+       "      <td>4.23</td>\n",
+       "      <td>3.3</td>\n",
+       "      <td>3.9</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "         Date  Benchmark 2y  Benchmark 10y  UNR  CPI\n",
+       "0  2011-01-31          3.87           4.71  3.5  3.4\n",
+       "1  2011-02-28          3.64           4.67  3.7  3.9\n",
+       "2  2011-03-31          3.57           4.48  3.8  4.1\n",
+       "3  2011-04-30          3.70           4.48  3.5  3.8\n",
+       "4  2011-05-31          3.52           4.23  3.3  3.9"
+      ]
+     },
+     "execution_count": 800,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "conn = sqlite3.connect('AQM_GroupR_Database.db')\n",
+    "c = conn.cursor()\n",
+    "c.execute('SELECT * FROM SouthKorea')\n",
+    "dfUSASQL=c.fetchall()\n",
+    "dfUSASQL = pd.DataFrame (dfUSASQL, columns = ['Date', 'Benchmark 2y', 'Benchmark 10y', 'UNR', 'CPI'])\n",
+    "dfUSASQL.head(5)"
    ]
   },
   {
@@ -3274,7 +4031,7 @@
   {
    "cell_type": "code",
    "execution_count": 174,
-   "id": "ae976d4a",
+   "id": "eb6d95dc",
    "metadata": {},
    "outputs": [],
    "source": []
@@ -3282,7 +4039,7 @@
   {
    "cell_type": "code",
    "execution_count": 463,
-   "id": "45683b7a",
+   "id": "1ccd6385",
    "metadata": {},
    "outputs": [
     {
@@ -3757,7 +4514,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "db04bdea",
+   "id": "9a2acc4c",
    "metadata": {},
    "source": [
     "### Regression USA 10y"
@@ -3766,7 +4523,7 @@
   {
    "cell_type": "code",
    "execution_count": 738,
-   "id": "8308f2d6",
+   "id": "1a13faf0",
    "metadata": {
     "scrolled": true
    },
@@ -3892,7 +4649,7 @@
   {
    "cell_type": "code",
    "execution_count": 739,
-   "id": "8a914101",
+   "id": "aca63e69",
    "metadata": {
     "scrolled": true
    },
@@ -3984,7 +4741,7 @@
   {
    "cell_type": "code",
    "execution_count": 740,
-   "id": "b639de3a",
+   "id": "7e5fb58a",
    "metadata": {
     "scrolled": false
    },
@@ -4022,7 +4779,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "828b6f71",
+   "id": "a0c9e016",
    "metadata": {},
    "source": [
     "### Heteroskedasticity USA 10y"
@@ -4031,7 +4788,7 @@
   {
    "cell_type": "code",
    "execution_count": 741,
-   "id": "1ad83377",
+   "id": "84c0e15f",
    "metadata": {
     "scrolled": false
    },
@@ -4069,7 +4826,7 @@
   {
    "cell_type": "code",
    "execution_count": 743,
-   "id": "b651c0b3",
+   "id": "8d581ec2",
    "metadata": {
     "scrolled": true
    },
@@ -4102,7 +4859,7 @@
   {
    "cell_type": "code",
    "execution_count": 744,
-   "id": "d51c99c2",
+   "id": "22968d14",
    "metadata": {},
    "outputs": [
     {
@@ -4131,7 +4888,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c12f9966",
+   "id": "56c1e3a0",
    "metadata": {},
    "source": [
     "### Autocorrelation USA 10y"
@@ -4140,7 +4897,7 @@
   {
    "cell_type": "code",
    "execution_count": 496,
-   "id": "a29d6f88",
+   "id": "2e2d907f",
    "metadata": {
     "scrolled": false
    },
@@ -4162,7 +4919,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "b03be23b",
+   "id": "d39cd7eb",
    "metadata": {},
    "source": [
     "### Multicollinearity USA 10y"
@@ -4171,7 +4928,7 @@
   {
    "cell_type": "code",
    "execution_count": 497,
-   "id": "f342a439",
+   "id": "4ceacec3",
    "metadata": {
     "scrolled": true
    },
@@ -4245,7 +5002,7 @@
   {
    "cell_type": "code",
    "execution_count": 498,
-   "id": "beaff09e",
+   "id": "7f613cec",
    "metadata": {
     "scrolled": true
    },
@@ -4282,7 +5039,7 @@
   {
    "cell_type": "code",
    "execution_count": 499,
-   "id": "567bb62e",
+   "id": "7bbddfee",
    "metadata": {
     "scrolled": true
    },
@@ -4358,7 +5115,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "62c2df90",
+   "id": "892bed89",
    "metadata": {},
    "source": [
     "# Analysis Japan"
@@ -4366,7 +5123,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "0456004f",
+   "id": "f042e3ca",
    "metadata": {},
    "source": [
     "### Regression Japan 2y"
@@ -4375,7 +5132,7 @@
   {
    "cell_type": "code",
    "execution_count": 500,
-   "id": "59b49169",
+   "id": "ebc60d20",
    "metadata": {
     "scrolled": true
    },
@@ -4501,7 +5258,7 @@
   {
    "cell_type": "code",
    "execution_count": 501,
-   "id": "c13ebad0",
+   "id": "1904c57e",
    "metadata": {
     "scrolled": true
    },
@@ -4593,7 +5350,7 @@
   {
    "cell_type": "code",
    "execution_count": 502,
-   "id": "cab256b8",
+   "id": "9eb91eac",
    "metadata": {
     "scrolled": true
    },
@@ -4631,7 +5388,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2ec32c27",
+   "id": "911cc0eb",
    "metadata": {},
    "source": [
     "### Heteroskedasticity Japan 2y\n"
@@ -4640,7 +5397,7 @@
   {
    "cell_type": "code",
    "execution_count": 503,
-   "id": "ec3b9680",
+   "id": "922fc8a0",
    "metadata": {
     "scrolled": true
    },
@@ -4678,7 +5435,7 @@
   {
    "cell_type": "code",
    "execution_count": 505,
-   "id": "4d48afbb",
+   "id": "8ee9b5d0",
    "metadata": {
     "scrolled": true
    },
@@ -4711,7 +5468,7 @@
   {
    "cell_type": "code",
    "execution_count": 746,
-   "id": "0d8626c7",
+   "id": "aaef0505",
    "metadata": {},
    "outputs": [
     {
@@ -4740,7 +5497,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "62f1185f",
+   "id": "5bdfad7c",
    "metadata": {},
    "source": [
     "### Autocorrelation Japan 2y"
@@ -4749,7 +5506,7 @@
   {
    "cell_type": "code",
    "execution_count": 506,
-   "id": "75555686",
+   "id": "671b6527",
    "metadata": {},
    "outputs": [
     {
@@ -4769,7 +5526,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2d3a6681",
+   "id": "a4674726",
    "metadata": {},
    "source": [
     "### Multicollinearity Japan 2y"
@@ -4778,7 +5535,7 @@
   {
    "cell_type": "code",
    "execution_count": 507,
-   "id": "3c6b4d15",
+   "id": "fba1ab27",
    "metadata": {
     "scrolled": true
    },
@@ -4852,7 +5609,7 @@
   {
    "cell_type": "code",
    "execution_count": 508,
-   "id": "0948e8d7",
+   "id": "08fb410b",
    "metadata": {
     "scrolled": true
    },
@@ -4889,7 +5646,7 @@
   {
    "cell_type": "code",
    "execution_count": 509,
-   "id": "29ca0706",
+   "id": "08bb8bbc",
    "metadata": {
     "scrolled": true
    },
@@ -4965,7 +5722,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "141d6ebe",
+   "id": "7c0af125",
    "metadata": {},
    "source": [
     "## Regression Japan 10y"
@@ -4974,7 +5731,7 @@
   {
    "cell_type": "code",
    "execution_count": 510,
-   "id": "c2d8e2fb",
+   "id": "e2d0577d",
    "metadata": {},
    "outputs": [
     {
@@ -5098,7 +5855,7 @@
   {
    "cell_type": "code",
    "execution_count": 511,
-   "id": "a323d7e0",
+   "id": "906fde8e",
    "metadata": {},
    "outputs": [
     {
@@ -5188,7 +5945,7 @@
   {
    "cell_type": "code",
    "execution_count": 512,
-   "id": "45db73ec",
+   "id": "d2d4137d",
    "metadata": {
     "scrolled": false
    },
@@ -5226,7 +5983,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "4861c756",
+   "id": "376e5bcb",
    "metadata": {},
    "source": [
     "### Heteroskedasticity Japan 10y"
@@ -5235,7 +5992,7 @@
   {
    "cell_type": "code",
    "execution_count": 513,
-   "id": "16480cbc",
+   "id": "4fbf7d27",
    "metadata": {
     "scrolled": true
    },
@@ -5273,7 +6030,7 @@
   {
    "cell_type": "code",
    "execution_count": 515,
-   "id": "45609f29",
+   "id": "a4a1adb8",
    "metadata": {
     "scrolled": true
    },
@@ -5306,7 +6063,7 @@
   {
    "cell_type": "code",
    "execution_count": 747,
-   "id": "4d6bdc99",
+   "id": "4fecff79",
    "metadata": {},
    "outputs": [
     {
@@ -5335,7 +6092,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "7cbbd21b",
+   "id": "73e526ce",
    "metadata": {},
    "source": [
     "### Autocorrelation Japan 10y"
@@ -5344,7 +6101,7 @@
   {
    "cell_type": "code",
    "execution_count": 517,
-   "id": "c0f08c39",
+   "id": "bada1684",
    "metadata": {},
    "outputs": [
     {
@@ -5364,7 +6121,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e07780c7",
+   "id": "50bd7da1",
    "metadata": {},
    "source": [
     "### Multicollinearity Japan 10y"
@@ -5373,7 +6130,7 @@
   {
    "cell_type": "code",
    "execution_count": 518,
-   "id": "ecd27dc3",
+   "id": "5c58397a",
    "metadata": {
     "scrolled": true
    },
@@ -5447,7 +6204,7 @@
   {
    "cell_type": "code",
    "execution_count": 519,
-   "id": "5ef633f9",
+   "id": "96f34d20",
    "metadata": {
     "scrolled": true
    },
@@ -5484,7 +6241,7 @@
   {
    "cell_type": "code",
    "execution_count": 520,
-   "id": "dd4b7c60",
+   "id": "c6e6b84b",
    "metadata": {
     "scrolled": true
    },
@@ -5560,7 +6317,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9245a8bd",
+   "id": "a81b0e51",
    "metadata": {},
    "source": [
     "# Analysis Germany"
@@ -5568,7 +6325,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9cfebd57",
+   "id": "91f33715",
    "metadata": {},
    "source": [
     "## Regression Germany 2y"
@@ -5577,7 +6334,7 @@
   {
    "cell_type": "code",
    "execution_count": 521,
-   "id": "27fccf57",
+   "id": "8510afab",
    "metadata": {
     "scrolled": false
    },
@@ -5703,7 +6460,7 @@
   {
    "cell_type": "code",
    "execution_count": 522,
-   "id": "4bf95e37",
+   "id": "7b44a536",
    "metadata": {
     "scrolled": false
    },
@@ -5795,7 +6552,7 @@
   {
    "cell_type": "code",
    "execution_count": 523,
-   "id": "dc5f7b0d",
+   "id": "d2289270",
    "metadata": {
     "scrolled": false
    },
@@ -5833,7 +6590,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "25720a10",
+   "id": "45c55541",
    "metadata": {},
    "source": [
     "### Heteroskedasticity Germany 2y"
@@ -5842,7 +6599,7 @@
   {
    "cell_type": "code",
    "execution_count": 524,
-   "id": "f017833a",
+   "id": "869f7b2a",
    "metadata": {
     "scrolled": true
    },
@@ -5880,7 +6637,7 @@
   {
    "cell_type": "code",
    "execution_count": 526,
-   "id": "bc522968",
+   "id": "462dd839",
    "metadata": {
     "scrolled": true
    },
@@ -5913,7 +6670,7 @@
   {
    "cell_type": "code",
    "execution_count": 748,
-   "id": "5e6b4a09",
+   "id": "cbb8a3bd",
    "metadata": {},
    "outputs": [
     {
@@ -5942,7 +6699,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "9f779b31",
+   "id": "be760131",
    "metadata": {},
    "source": [
     "### Autocorrelation Germany 2y"
@@ -5951,7 +6708,7 @@
   {
    "cell_type": "code",
    "execution_count": 527,
-   "id": "20cb92ca",
+   "id": "309d407b",
    "metadata": {},
    "outputs": [
     {
@@ -5971,7 +6728,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "af110437",
+   "id": "550ed708",
    "metadata": {},
    "source": [
     "### Multicollinearity Germany 2y"
@@ -5980,7 +6737,7 @@
   {
    "cell_type": "code",
    "execution_count": 529,
-   "id": "8b0eea2c",
+   "id": "22bb3175",
    "metadata": {
     "scrolled": true
    },
@@ -6054,7 +6811,7 @@
   {
    "cell_type": "code",
    "execution_count": 530,
-   "id": "962b6dfe",
+   "id": "d509a0c8",
    "metadata": {},
    "outputs": [
     {
@@ -6089,7 +6846,7 @@
   {
    "cell_type": "code",
    "execution_count": 531,
-   "id": "7ad41c86",
+   "id": "326b3ed3",
    "metadata": {},
    "outputs": [
     {
@@ -6163,7 +6920,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "45a57074",
+   "id": "4d7f77e5",
    "metadata": {},
    "source": [
     "## Regression Germany 10y"
@@ -6172,7 +6929,7 @@
   {
    "cell_type": "code",
    "execution_count": 749,
-   "id": "e5a7dd91",
+   "id": "f7371854",
    "metadata": {
     "scrolled": true
    },
@@ -6298,7 +7055,7 @@
   {
    "cell_type": "code",
    "execution_count": 750,
-   "id": "80b0bf51",
+   "id": "20826e4b",
    "metadata": {
     "scrolled": true
    },
@@ -6390,7 +7147,7 @@
   {
    "cell_type": "code",
    "execution_count": 751,
-   "id": "c29768f6",
+   "id": "e646adb5",
    "metadata": {},
    "outputs": [
     {
@@ -6426,7 +7183,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ec280680",
+   "id": "264fd991",
    "metadata": {},
    "source": [
     "### Heteroskedasticity Germany 10y"
@@ -6435,7 +7192,7 @@
   {
    "cell_type": "code",
    "execution_count": 752,
-   "id": "db269d02",
+   "id": "caa60221",
    "metadata": {
     "scrolled": true
    },
@@ -6473,7 +7230,7 @@
   {
    "cell_type": "code",
    "execution_count": 754,
-   "id": "be0047d9",
+   "id": "be8a4419",
    "metadata": {
     "scrolled": true
    },
@@ -6506,7 +7263,7 @@
   {
    "cell_type": "code",
    "execution_count": 759,
-   "id": "7940a186",
+   "id": "21cc99f1",
    "metadata": {},
    "outputs": [
     {
@@ -6535,7 +7292,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "d0dcb759",
+   "id": "6f74b915",
    "metadata": {},
    "source": [
     "### Autocorrelation Germany 10y"
@@ -6544,7 +7301,7 @@
   {
    "cell_type": "code",
    "execution_count": 755,
-   "id": "76e5f422",
+   "id": "3e34e567",
    "metadata": {},
    "outputs": [
     {
@@ -6564,7 +7321,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "cd121ef9",
+   "id": "c8d6f77f",
    "metadata": {},
    "source": [
     "### Multicollinearity Germany 10y"
@@ -6573,7 +7330,7 @@
   {
    "cell_type": "code",
    "execution_count": 756,
-   "id": "fc2638bc",
+   "id": "270aa5ed",
    "metadata": {},
    "outputs": [
     {
@@ -6645,7 +7402,7 @@
   {
    "cell_type": "code",
    "execution_count": 757,
-   "id": "4ce1a2d1",
+   "id": "faae76de",
    "metadata": {},
    "outputs": [
     {
@@ -6680,7 +7437,7 @@
   {
    "cell_type": "code",
    "execution_count": 758,
-   "id": "fd0f4911",
+   "id": "a88339df",
    "metadata": {},
    "outputs": [
     {
@@ -6754,7 +7511,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "a4d2fc4d",
+   "id": "02365168",
    "metadata": {},
    "source": [
     "# Analysis Sweden"
@@ -6762,7 +7519,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "dbcb1b37",
+   "id": "0919a745",
    "metadata": {},
    "source": [
     "## Regression Sweden 2y"
@@ -6771,7 +7528,7 @@
   {
    "cell_type": "code",
    "execution_count": 544,
-   "id": "6583799c",
+   "id": "4b21df19",
    "metadata": {},
    "outputs": [
     {
@@ -6895,7 +7652,7 @@
   {
    "cell_type": "code",
    "execution_count": 545,
-   "id": "9121d15a",
+   "id": "9ea25f31",
    "metadata": {},
    "outputs": [
     {
@@ -6985,7 +7742,7 @@
   {
    "cell_type": "code",
    "execution_count": 546,
-   "id": "e74e9abc",
+   "id": "5966785b",
    "metadata": {
     "scrolled": true
    },
@@ -7023,7 +7780,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "1e39a46e",
+   "id": "ecf70178",
    "metadata": {},
    "source": [
     "### Heteroskedasticity Sweden 2y"
@@ -7032,7 +7789,7 @@
   {
    "cell_type": "code",
    "execution_count": 547,
-   "id": "7b88bbcd",
+   "id": "d4dc73ce",
    "metadata": {},
    "outputs": [
     {
@@ -7068,7 +7825,7 @@
   {
    "cell_type": "code",
    "execution_count": 549,
-   "id": "576b2176",
+   "id": "86bcf90c",
    "metadata": {},
    "outputs": [
     {
@@ -7099,7 +7856,7 @@
   {
    "cell_type": "code",
    "execution_count": 760,
-   "id": "83afe363",
+   "id": "338f8ca0",
    "metadata": {},
    "outputs": [
     {
@@ -7128,7 +7885,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c30ddee3",
+   "id": "99c21c16",
    "metadata": {},
    "source": [
     "### Autocorrelation Sweden 2y"
@@ -7137,7 +7894,7 @@
   {
    "cell_type": "code",
    "execution_count": 551,
-   "id": "322a1f4c",
+   "id": "59d044cf",
    "metadata": {},
    "outputs": [
     {
@@ -7157,7 +7914,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "2ae3f86a",
+   "id": "9da442c6",
    "metadata": {},
    "source": [
     "### Multicollinearity Sweden 2y"
@@ -7166,7 +7923,7 @@
   {
    "cell_type": "code",
    "execution_count": 552,
-   "id": "d99c1b9f",
+   "id": "e67107be",
    "metadata": {
     "scrolled": true
    },
@@ -7240,7 +7997,7 @@
   {
    "cell_type": "code",
    "execution_count": 415,
-   "id": "ffe2198e",
+   "id": "1148bfac",
    "metadata": {},
    "outputs": [
     {
@@ -7275,7 +8032,7 @@
   {
    "cell_type": "code",
    "execution_count": 554,
-   "id": "3a7d144e",
+   "id": "cd7802b1",
    "metadata": {},
    "outputs": [
     {
@@ -7349,7 +8106,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "ec6788e2",
+   "id": "1d309d31",
    "metadata": {},
    "source": [
     "## Regression Sweden 10y"
@@ -7358,7 +8115,7 @@
   {
    "cell_type": "code",
    "execution_count": 633,
-   "id": "4567e81a",
+   "id": "336e2ca8",
    "metadata": {},
    "outputs": [
     {
@@ -7482,7 +8239,7 @@
   {
    "cell_type": "code",
    "execution_count": 634,
-   "id": "5c4108d2",
+   "id": "4ed6b4e8",
    "metadata": {},
    "outputs": [
     {
@@ -7572,7 +8329,7 @@
   {
    "cell_type": "code",
    "execution_count": 635,
-   "id": "3df4f299",
+   "id": "5aa4a097",
    "metadata": {},
    "outputs": [
     {
@@ -7608,7 +8365,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "09f5bef1",
+   "id": "331ae51e",
    "metadata": {},
    "source": [
     "### Heteroskedasticity Sweden 10y"
@@ -7617,7 +8374,7 @@
   {
    "cell_type": "code",
    "execution_count": 636,
-   "id": "e0c3acc3",
+   "id": "cad0d6d3",
    "metadata": {},
    "outputs": [
     {
@@ -7653,7 +8410,7 @@
   {
    "cell_type": "code",
    "execution_count": 637,
-   "id": "5e9f8204",
+   "id": "e1b1c152",
    "metadata": {},
    "outputs": [
     {
@@ -7692,7 +8449,7 @@
   {
    "cell_type": "code",
    "execution_count": 761,
-   "id": "e57659e1",
+   "id": "178dcf38",
    "metadata": {},
    "outputs": [
     {
@@ -7721,7 +8478,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "dc5de861",
+   "id": "a3177d52",
    "metadata": {},
    "source": [
     "### Autocorrelation Sweden 10y"
@@ -7730,7 +8487,7 @@
   {
    "cell_type": "code",
    "execution_count": 638,
-   "id": "913273d6",
+   "id": "460099e0",
    "metadata": {},
    "outputs": [
     {
@@ -7750,7 +8507,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "e2500eec",
+   "id": "521e6c18",
    "metadata": {},
    "source": [
     "### Multicollinearity Sweden 10y"
@@ -7759,7 +8516,7 @@
   {
    "cell_type": "code",
    "execution_count": 639,
-   "id": "e949e2c7",
+   "id": "20f8b9ee",
    "metadata": {
     "scrolled": true
    },
@@ -7833,7 +8590,7 @@
   {
    "cell_type": "code",
    "execution_count": 640,
-   "id": "3da7bfab",
+   "id": "79df4b39",
    "metadata": {
     "scrolled": true
    },
@@ -7870,7 +8627,7 @@
   {
    "cell_type": "code",
    "execution_count": 641,
-   "id": "32a7a5d3",
+   "id": "425c0010",
    "metadata": {
     "scrolled": true
    },
@@ -7946,7 +8703,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f7f84b1e",
+   "id": "2d7557eb",
    "metadata": {},
    "source": [
     "\n",
@@ -7955,7 +8712,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "79a0c6d0",
+   "id": "c2ab5a7f",
    "metadata": {},
    "source": [
     "## Regression South Korea 2y"
@@ -7964,7 +8721,7 @@
   {
    "cell_type": "code",
    "execution_count": 642,
-   "id": "4e8ee769",
+   "id": "75e95479",
    "metadata": {
     "scrolled": true
    },
@@ -8090,7 +8847,7 @@
   {
    "cell_type": "code",
    "execution_count": 643,
-   "id": "b4e5279d",
+   "id": "0c861fe7",
    "metadata": {
     "scrolled": true
    },
@@ -8182,7 +8939,7 @@
   {
    "cell_type": "code",
    "execution_count": 644,
-   "id": "bcc760bc",
+   "id": "97484a2b",
    "metadata": {
     "scrolled": true
    },
@@ -8220,7 +8977,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "c2953000",
+   "id": "776291b1",
    "metadata": {},
    "source": [
     "## Heteroskedasticity South Korea 2y"
@@ -8229,7 +8986,7 @@
   {
    "cell_type": "code",
    "execution_count": 645,
-   "id": "4b46fed2",
+   "id": "eb18595c",
    "metadata": {
     "scrolled": true
    },
@@ -8267,7 +9024,7 @@
   {
    "cell_type": "code",
    "execution_count": 649,
-   "id": "c620cf66",
+   "id": "c005213f",
    "metadata": {
     "scrolled": true
    },
@@ -8300,7 +9057,7 @@
   {
    "cell_type": "code",
    "execution_count": 762,
-   "id": "6c8d9ddc",
+   "id": "0124e8d5",
    "metadata": {},
    "outputs": [
     {
@@ -8329,7 +9086,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "1138805e",
+   "id": "65d59471",
    "metadata": {},
    "source": [
     "### Autocorrelation South Korea 2y"
@@ -8338,7 +9095,7 @@
   {
    "cell_type": "code",
    "execution_count": 650,
-   "id": "68d738c8",
+   "id": "12574b37",
    "metadata": {},
    "outputs": [
     {
@@ -8358,7 +9115,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "26a7c3e0",
+   "id": "9e1a7cab",
    "metadata": {},
    "source": [
     "### Multicollinearity South Korea 2y"
@@ -8367,7 +9124,7 @@
   {
    "cell_type": "code",
    "execution_count": 663,
-   "id": "9f05d050",
+   "id": "eb7ca11a",
    "metadata": {
     "scrolled": true
    },
@@ -8441,7 +9198,7 @@
   {
    "cell_type": "code",
    "execution_count": 664,
-   "id": "2459bad2",
+   "id": "c75b9238",
    "metadata": {},
    "outputs": [
     {
@@ -8476,7 +9233,7 @@
   {
    "cell_type": "code",
    "execution_count": 665,
-   "id": "72531d53",
+   "id": "26f4c76c",
    "metadata": {},
    "outputs": [
     {
@@ -8550,7 +9307,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "50383123",
+   "id": "1c2b680d",
    "metadata": {},
    "source": [
     "## Regression South Korea 10y"
@@ -8559,7 +9316,7 @@
   {
    "cell_type": "code",
    "execution_count": 654,
-   "id": "c7479ddd",
+   "id": "00368cbc",
    "metadata": {},
    "outputs": [
     {
@@ -8683,7 +9440,7 @@
   {
    "cell_type": "code",
    "execution_count": 655,
-   "id": "fc885b04",
+   "id": "6478bbf3",
    "metadata": {},
    "outputs": [
     {
@@ -8773,7 +9530,7 @@
   {
    "cell_type": "code",
    "execution_count": 656,
-   "id": "be808880",
+   "id": "0d8959c9",
    "metadata": {},
    "outputs": [
     {
@@ -8809,7 +9566,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "118d5f9e",
+   "id": "0c577234",
    "metadata": {},
    "source": [
     "### Heteroskedasticity South Korea 10y"
@@ -8818,7 +9575,7 @@
   {
    "cell_type": "code",
    "execution_count": 657,
-   "id": "07f60550",
+   "id": "7c4f451f",
    "metadata": {
     "scrolled": true
    },
@@ -8856,7 +9613,7 @@
   {
    "cell_type": "code",
    "execution_count": 659,
-   "id": "b09e05e3",
+   "id": "aae5c91a",
    "metadata": {
     "scrolled": true
    },
@@ -8889,7 +9646,7 @@
   {
    "cell_type": "code",
    "execution_count": 763,
-   "id": "181a3f98",
+   "id": "3426436f",
    "metadata": {},
    "outputs": [
     {
@@ -8918,7 +9675,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "f9c131e0",
+   "id": "84cf1d48",
    "metadata": {},
    "source": [
     "### Autocorrelation South Korea 10y"
@@ -8927,7 +9684,7 @@
   {
    "cell_type": "code",
    "execution_count": 660,
-   "id": "575b86e4",
+   "id": "1578c2f2",
    "metadata": {
     "scrolled": true
    },
@@ -8949,7 +9706,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "cee60f89",
+   "id": "2acc7b61",
    "metadata": {},
    "source": [
     "### Multicollinearity South Korea 10y"
@@ -8958,7 +9715,7 @@
   {
    "cell_type": "code",
    "execution_count": 662,
-   "id": "0b746e29",
+   "id": "016c7335",
    "metadata": {},
    "outputs": [
     {
@@ -9030,7 +9787,7 @@
   {
    "cell_type": "code",
    "execution_count": 666,
-   "id": "bc1602b4",
+   "id": "46e54535",
    "metadata": {},
    "outputs": [
     {
@@ -9065,7 +9822,7 @@
   {
    "cell_type": "code",
    "execution_count": 667,
-   "id": "ba61206f",
+   "id": "70c1d760",
    "metadata": {},
    "outputs": [
     {
@@ -9140,14 +9897,14 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "f428aef2",
+   "id": "3fc75e5a",
    "metadata": {},
    "outputs": [],
    "source": []
   },
   {
    "cell_type": "markdown",
-   "id": "88d8460c",
+   "id": "5dbc1505",
    "metadata": {},
    "source": [
     "# export to results table"
@@ -9156,9 +9913,9 @@
   {
    "cell_type": "code",
    "execution_count": 718,
-   "id": "2fecfee2",
+   "id": "fc91f0d7",
    "metadata": {
-    "scrolled": false
+    "scrolled": true
    },
    "outputs": [
     {
@@ -9265,10 +10022,20 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "41729030",
+   "metadata": {},
+   "source": [
+    "# Export regression results to LaTex"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": 730,
-   "id": "4cb4fcc6",
-   "metadata": {},
+   "id": "1df73410",
+   "metadata": {
+    "scrolled": true
+   },
    "outputs": [
     {
      "name": "stdout",
@@ -9289,7 +10056,7 @@
   {
    "cell_type": "code",
    "execution_count": 731,
-   "id": "392b5177",
+   "id": "c8626884",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -9299,7 +10066,7 @@
   {
    "cell_type": "code",
    "execution_count": 734,
-   "id": "768d0cab",
+   "id": "e5714ec4",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -9309,10 +10076,8 @@
   {
    "cell_type": "code",
    "execution_count": 735,
-   "id": "9510bf51",
-   "metadata": {
-    "scrolled": true
-   },
+   "id": "ae72bc45",
+   "metadata": {},
    "outputs": [
     {
      "data": {
@@ -9340,7 +10105,7 @@
   {
    "cell_type": "code",
    "execution_count": 736,
-   "id": "dff9cf45",
+   "id": "beae8e3f",
    "metadata": {},
    "outputs": [
     {
@@ -9357,23 +10122,6 @@
    "source": [
     "open('regression.tex', 'w').write(Results_export.render_latex())"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 764,
-   "id": "2994d336",
-   "metadata": {},
-   "outputs": [
-    {
-     "ename": "SyntaxError",
-     "evalue": "invalid syntax (1992979168.py, line 1)",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;36m  File \u001b[0;32m\"/var/folders/b1/yz60826569v3xmp1h9w2s1tw0000gn/T/ipykernel_90291/1992979168.py\"\u001b[0;36m, line \u001b[0;32m1\u001b[0m\n\u001b[0;31m    jupyter nbconvert/ --to latex\u001b[0m\n\u001b[0m            ^\u001b[0m\n\u001b[0;31mSyntaxError\u001b[0m\u001b[0;31m:\u001b[0m invalid syntax\n"
-     ]
-    }
-   ],
-   "source": []
   }
  ],
  "metadata": {
